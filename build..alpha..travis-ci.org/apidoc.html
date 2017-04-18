@@ -1,0 +1,506 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/speedskater/babel-plugin-rewire#readme"
+
+    >babel-plugin-rewire (v1.1.0)</a>
+</h1>
+<h4>A babel plugin adding the ability to rewire module dependencies. This enables to mock modules for testing purposes.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-rewire">module babel-plugin-rewire</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.babel-plugin-rewire">
+            function <span class="apidocSignatureSpan"></span>babel-plugin-rewire
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.toString">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-rewire.</span>RewireHelpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-rewire.</span>RewireState</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-rewire.</span>Templates</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-rewire.RewireHelpers">module babel-plugin-rewire.RewireHelpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.RewireHelpers.contains">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>contains
+            <span class="apidocSignatureSpan">(array, needle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.RewireHelpers.noRewire">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>noRewire
+            <span class="apidocSignatureSpan">(identifier)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.RewireHelpers.wasProcessed">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>wasProcessed
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-rewire.RewireState">module babel-plugin-rewire.RewireState</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.RewireState.default">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireState.</span>default
+            <span class="apidocSignatureSpan">(scope)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-rewire.Templates">module babel-plugin-rewire.Templates</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.Templates.enrichExportTemplate">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>enrichExportTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.Templates.filterWildcardImportTemplate">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>filterWildcardImportTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.Templates.universalAccesorsTemplate">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>universalAccesorsTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-rewire.toString">module babel-plugin-rewire.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-rewire.toString.toString">
+            function <span class="apidocSignatureSpan">babel-plugin-rewire.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-rewire" id="apidoc.module.babel-plugin-rewire">module babel-plugin-rewire</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.babel-plugin-rewire" id="apidoc.element.babel-plugin-rewire.babel-plugin-rewire">
+        function <span class="apidocSignatureSpan"></span>babel-plugin-rewire
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">babel-plugin-rewire = function (_ref) {
+	var t = _ref.types;
+
+	function isRewireable(path, variableBinding) {
+		var node = path.node;
+		var parent = path.parent;
+
+
+		return variableBinding.referencePaths !== null &#x26;&#x26; !(parent.type === &#x27;VariableDeclarator&#x27; &#x26;&#x26; parent.id == node) &#x26;&#x26; !(parent.type
+ === &#x27;ForInStatement&#x27; &#x26;&#x26; parent.left == node) &#x26;&#x26; !(parent.type === &#x27;FunctionExpression&#x27; &#x26;&#x26; parent.id === node) &#x26;&#x26; !(parent.type === &#x27;
+MemberExpression&#x27; &#x26;&#x26; parent.property === node) &#x26;&#x26; !(parent.type === &#x27;ObjectProperty&#x27; &#x26;&#x26; parent.key === node) &#x26;&#x26; !(parent.type === &#x27;
+ObjectMethod&#x27; &#x26;&#x26; parent.key === node) &#x26;&#x26; !(parent.type === &#x27;ObjectProperty&#x27; &#x26;&#x26; path.parentPath &#x26;&#x26; path.parentPath.parent &#x26;&#x26; path
+.parentPath.parent.type === &#x27;ObjectPattern&#x27;) &#x26;&#x26; !(parent.type === &#x27;ExportSpecifier&#x27;) &#x26;&#x26; !(parent.type === &#x27;ImportSpecifier&#x27;) &#x26;&#x26; !(
+parent.type === &#x27;ObjectTypeProperty&#x27;) &#x26;&#x26; !(parent.type === &#x27;ClassMethod&#x27;);
+	}
+
+	function doesIdentifierRepresentAValidReference(path, variableBinding, rewireInformation) {
+		var isIgnoredVariable = rewireInformation.ignoredIdentifiers.indexOf(path.node.name) !== -1;
+		return !isIgnoredVariable &#x26;&#x26; variableBinding !== undefined &#x26;&#x26; !(0, _RewireHelpers.wasProcessed)(path) &#x26;&#x26; variableBinding.scope
+.block.type === &#x27;Program&#x27;;
+	}
+
+	function getVariableNameAndBinding(path) {
+		var node = path.node;
+		var parent = path.parent;
+		var scope = path.scope;
+
+		var variableName = node.name;
+		var variableBinding = !t.isFlow || !t.isFlow(node) &#x26;&#x26; !t.isFlow(parent) ? scope.getBinding(variableName) : undefined;
+
+		return {
+			variableName: variableName,
+			variableBinding: variableBinding
+		};
+	}
+
+	var BodyVisitor = {
+		Identifier: function Identifier(path, rewireInformation) {
+			var node = path.node;
+			var parent = path.parent;
+			var scope = path.scope;
+
+			var _getVariableNameAndBi = getVariableNameAndBinding(path);
+
+			var variableName = _getVariableNameAndBi.variableName;
+			var variableBinding = _getVariableNameAndBi.variableBinding;
+
+			//Matches for body
+
+			if (doesIdentifierRepresentAValidReference(path, variableBinding, rewireInformation)) {
+				var isWildCardImport = variableBinding.path.type === &#x27;ImportNamespaceSpecifier&#x27;;
+				if (isRewireable(path, variableBinding) &#x26;&#x26; (0, _RewireHelpers.contains)(variableBinding.referencePaths, path)) {
+					if (parent.type === &#x27;UpdateExpression&#x27;) {
+						rewireInformation.addUpdateableVariable(variableName);
+						path.parentPath.replaceWith(t.callExpression(rewireInformation.getUpdateOperationID(), [t.stringLiteral(parent.operator),
+t.stringLiteral(variableName), t.booleanLiteral(parent.prefix)]));
+					} else {
+						rewireInformation.ensureAccessor(variableName, isWildCardImport);
+						path.replaceWith(t.callExpression(rewireInformation.getUniversalGetterID(), [t.stringLiteral(variableName)]));
+					}
+				} else if (parent.type === &#x27;AssignmentExpression&#x27; &#x26;&#x26; parent.left == node) {
+					rewireInformation.addUpdateableVariable(variableName);
+
+					if (parent.operator === &#x27;=&#x27;) {
+						path.parentPath.replaceWith((0, _RewireHelpers.noRewire)(t.callExpression(rewireInformation.getAssignmentOperationID(), [t
+.stringLiteral(variableName), parent.right])));
+					} else {
+						var baseOperator = parent.operator.substring(0, parent.operator.length - 1);
+						path.parentPath.replaceWith(t.assignmentExpression(&#x27;=&#x27;, parent.left, t.binaryExpression(baseOperator, t.callExpression(rewireInformation
+.getUniversalGetterID(), [t.stringLiteral(variableName)]), parent.right)));
+					}
+					//TODO variable bindings add accessor for each variable declaration even if its unused. The reason is that any other plugin
+ could potentially change the code otherwise
+				}
+
+				if (variableBinding.identifier === node) {
+					rewireInformation.addTrackedIdentifier(variableName, isWildCardImport);
+				}
+			}
+		},
+
+		&#x27;ExportNamedDeclaration|ExportAllDeclaration&#x27;: function ExportNamedDeclarationExportAllDeclaration(_ref2, rewireInformation) {
+			var _ref2$node$specifiers = _ref2.node.specifiers;
+			var specifiers = _ref2$node$specifiers === undefined ? [] : _ref2$node$specifiers;
+
+			var hasDefaultExport = specifiers.some(function (speci ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.toString" id="apidoc.element.babel-plugin-rewire.toString">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-rewire.RewireHelpers" id="apidoc.module.babel-plugin-rewire.RewireHelpers">module babel-plugin-rewire.RewireHelpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.RewireHelpers.contains" id="apidoc.element.babel-plugin-rewire.RewireHelpers.contains">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>contains
+        <span class="apidocSignatureSpan">(array, needle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function contains(array, needle) {
+  var contains = false;
+  for (var i = 0; i &#x3c; array.length; ++i) {
+    contains = contains || array[i] == needle;
+  }
+  return contains;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.RewireHelpers.noRewire" id="apidoc.element.babel-plugin-rewire.RewireHelpers.noRewire">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>noRewire
+        <span class="apidocSignatureSpan">(identifier)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noRewire(identifier) {
+  identifier.__noRewire = true;
+  return identifier;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.RewireHelpers.wasProcessed" id="apidoc.element.babel-plugin-rewire.RewireHelpers.wasProcessed">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireHelpers.</span>wasProcessed
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wasProcessed(path) {
+  return path.node.__noRewire === true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-rewire.RewireState" id="apidoc.module.babel-plugin-rewire.RewireState">module babel-plugin-rewire.RewireState</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.RewireState.default" id="apidoc.element.babel-plugin-rewire.RewireState.default">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.RewireState.</span>default
+        <span class="apidocSignatureSpan">(scope)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RewireState(scope) {
+		_classCallCheck(this, RewireState);
+
+		this.isES6Module = false;
+		this.hasES6Export = false;
+		this.hasES6DefaultExport = false;
+		this.nodesToAppendToProgramBody = [];
+		this.hasCommonJSExport = false;
+		this.accessors = {};
+		this.trackedIdentfiers = {};
+		this.isWildcardImport = {};
+		this.ignoredIdentifiers = [];
+		this.updateableVariables = {};
+		this.getGlobalVariableHandleIdentifier = scope.generateUidIdentifier(&#x27;getGlobalObject&#x27;);
+		this.getRewiredDataIdentifier = scope.generateUidIdentifier(&#x27;__getRewiredData__&#x27;);
+		this.getRewireRegistryIdentifier = scope.generateUidIdentifier(&#x27;__getRewireRegistry__&#x27;);
+		this.getUniqueGlobalModuleIdIdentifier = scope.generateUidIdentifier(&#x27;__getRewireModuleId__&#x27;);
+		this.uniqueModuleIdIdentifier = scope.generateUidIdentifier(&#x27;__RewireModuleId__&#x27;);
+		this.originalVariableAccessorIdentifier = scope.generateUidIdentifier(&#x27;__get_original__&#x27;);
+		this.originalVariableSetterIdentifier = scope.generateUidIdentifier(&#x27;__set_original__&#x27;);
+		this.updateOperationIdentifier = scope.generateUidIdentifier(&#x27;__update_operation__&#x27;);
+		this.assignmentOperationIdentifier = scope.generateUidIdentifier(&#x27;__assign__&#x27;);
+		this.typeofOriginalExportVariable = scope.generateUidIdentifier(&#x27;typeOfOriginalExport&#x27;);
+
+		this.universalAccessors = {
+			__get__: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__get__&#x27;)),
+			__set__: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__set__&#x27;)),
+			__reset__: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__reset__&#x27;)),
+			__with__: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__with__&#x27;)),
+			__RewireAPI__: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__RewireAPI__&#x27;)),
+			__assignOperation: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier(&#x27;__assign__&#x27;))
+		};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-rewire.Templates" id="apidoc.module.babel-plugin-rewire.Templates">module babel-plugin-rewire.Templates</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.Templates.enrichExportTemplate" id="apidoc.element.babel-plugin-rewire.Templates.enrichExportTemplate">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>enrichExportTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enrichExportTemplate = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return useTemplate(_getAst(), args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.Templates.filterWildcardImportTemplate" id="apidoc.element.babel-plugin-rewire.Templates.filterWildcardImportTemplate">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>filterWildcardImportTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterWildcardImportTemplate = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return useTemplate(_getAst(), args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.Templates.universalAccesorsTemplate" id="apidoc.element.babel-plugin-rewire.Templates.universalAccesorsTemplate">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.Templates.</span>universalAccesorsTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">universalAccesorsTemplate = function () {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key &#x3c; _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return useTemplate(_getAst(), args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-rewire.toString" id="apidoc.module.babel-plugin-rewire.toString">module babel-plugin-rewire.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-rewire.toString.toString" id="apidoc.element.babel-plugin-rewire.toString.toString">
+        function <span class="apidocSignatureSpan">babel-plugin-rewire.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
