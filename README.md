@@ -1,6 +1,6 @@
 # npmdoc-babel-plugin-rewire
 
-#### api documentation for  [babel-plugin-rewire (v1.1.0)](https://github.com/speedskater/babel-plugin-rewire#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-rewire.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-rewire) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-rewire.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-rewire)
+#### basic api documentation for  [babel-plugin-rewire (v1.1.0)](https://github.com/speedskater/babel-plugin-rewire#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-rewire.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-rewire) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-rewire.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-rewire)
 
 #### A babel plugin adding the ability to rewire module dependencies. This enables to mock modules for testing purposes.
 
@@ -117,7 +117,8 @@
         "prepublish": "babel src --out-dir lib",
         "test": "mocha && ./node_modules/.bin/mocha usage-tests"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
