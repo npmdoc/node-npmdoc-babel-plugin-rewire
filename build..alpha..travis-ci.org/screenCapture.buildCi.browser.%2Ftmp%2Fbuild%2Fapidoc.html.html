@@ -368,7 +368,23 @@ t.stringLiteral(variableName), t.booleanLiteral(parent.prefix)]));
 			__assignOperation: (0, _RewireHelpers.noRewire)(scope.generateUidIdentifier('__assign__'))
 		};
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+	};
+
+	var ProgramVisitor = {
+		Program: {
+			enter: function enter(path, state) {
+				if (!(0, _RewireHelpers.wasProcessed)(path)) {
+					var rewireState = new _RewireState2.<span class="apidocCodeKeywordSpan">default</span>(path.scope);
+					rewireState.setIgnoredIdentifiers(state.opts.ignoredIdentifiers);
+
+					path.traverse(BodyVisitor, rewireState);
+
+					state.rewireState = rewireState;
+				}
+			},
+...</pre></li>
     </ul>
 
 
